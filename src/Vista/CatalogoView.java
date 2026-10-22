@@ -13,7 +13,10 @@ public class CatalogoView {
         System.out.println("\n--Menu Catalogo de melodias--");
         System.out.println("1.Registrar Melodia");
         System.out.println("2.Mostrar todo el catalogo");
-        System.out.println("3.Salir");
+        System.out.println("3.Borrar Melodia");
+        System.out.println("4.Ver el Valor total");
+        System.out.println("5.Ordena y muestra por precio");
+        System.out.println("6.Salir");
         System.out.println("Elige una opcion: ");
         return leerNumeros.nextInt();
 
@@ -68,4 +71,8 @@ public class CatalogoView {
         numero=leerNumeros.nextInt();
         return generos[numero-1].toString();
                     }
+    public String leerNombreParaBorrar() {
+        System.out.println("Ingresa el nombre de la melodía a eliminar:");
+        return leerCadenas.nextLine();
+    }
 }

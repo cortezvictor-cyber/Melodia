@@ -10,13 +10,13 @@ public class Melodia {
     private double precio;
     private String formato;
 
-    public Melodia(int id, String nombre, String compositor, int anio, String genero, String cantante, double precio, String formato) {
-        this.id = id;
-        this.nombre = nombre;
-        this.compositor = compositor;
+    public Melodia( String nm, String nco, int anio, String genero, String nca, double precio, String formato) {
+        this.id =this.hashCode();
+        this.nombre = nm;
+        this.compositor = nco;
         this.anio = anio;
         this.genero = genero;
-        this.cantante = cantante;
+        this.cantante = nca;
         this.precio = precio;
         this.formato = formato;
     }
@@ -29,9 +29,6 @@ public class Melodia {
         this.cantante = "Alfredo Olivas";
         this.precio = 200;
         this.formato = "mp3";
-    }
-
-    public Melodia(String nm, String nco, int anio, String genero, String nca, double precio, String formato) {
     }
 
 
@@ -109,6 +106,18 @@ public class Melodia {
                 ", precio=" + precio +
                 ", formato='" + formato + '\'' +
                 '}';
+    }
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Melodia melodia = (Melodia) o;
+        return anio == melodia.anio && java.util.Objects.equals(cantante, melodia.cantante);
+    }
+
+    @Override
+    public int hashCode() {
+        return java.util.Objects.hash(cantante, anio);
     }
 
 }
