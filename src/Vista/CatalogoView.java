@@ -8,18 +8,38 @@ public class CatalogoView {
     private Scanner leerNumeros=new Scanner(System.in);
     private Scanner leerCadenas=new Scanner(System.in);
    private String[] formatos={"mp3","oog","wav"};
+    public int leerIdMelodia() {
+        System.out.println("Ingresa el ID de la melodía:");
+        return leerNumeros.nextInt();
+    }
     public int mostrarMenu(){
-
         System.out.println("\n--Menu Catalogo de melodias--");
-        System.out.println("1.Registrar Melodia");
-        System.out.println("2.Mostrar todo el catalogo");
-        System.out.println("3.Borrar Melodia");
-        System.out.println("4.Ver el Valor total");
-        System.out.println("5.Ordena y muestra por precio");
-        System.out.println("6.Salir");
+        System.out.println("1. Registrar Melodia");
+        System.out.println("2. Mostrar todo el catalogo");
+        System.out.println("3. Borrar Melodia");
+        System.out.println("4. Ver el Valor total");
+        System.out.println("5. Ordena y muestra por precio");
+        System.out.println("6. Actualizar por Id");
+        System.out.println("7. Ordenar y muestra por año");
+        System.out.println("8. Ordenar y muestra por cantante");
+        System.out.println("9. Buscar melodías por año");
+        System.out.println("10. Buscar melodías por compositor");
+        System.out.println("11. Ver todos los géneros");
+        System.out.println("12. Buscar melodías por cantante");
+        System.out.println("13. Ver cantantes ");
+        System.out.println("14. Ver conteo de formatos");
+        System.out.println("15. Salir");
         System.out.println("Elige una opcion: ");
         return leerNumeros.nextInt();
+    }
 
+    public String leerCantanteBusqueda() {
+        System.out.println("Ingresa el nombre del cantante a buscar:");
+        return leerCadenas.nextLine();
+    }
+    public int leerAnioBusqueda() {
+        System.out.println("Ingresa el año a buscar:");
+        return leerNumeros.nextInt();
     }
     public String leerNombreMelodia(){
         System.out.println("Ingresa el nombre");

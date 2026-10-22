@@ -6,24 +6,17 @@ import Modelo.Melodia;
 
 public class Main {
   public static void main(String[] args) {
-    CatalogoMelodias melodias = new CatalogoMelodias();
+    // Inicializamos el modelo, la vista y el controlador principal
+    CatalogoMelodias modelo = new CatalogoMelodias();
+    CatalogoView vista = new CatalogoView();
 
+    // (Opcional) Si quieres probar agregando la melodía por defecto al iniciar:
     Melodia m1 = new Melodia();
-    m1.generarId();
+    modelo.registrarMelodia(m1);
 
-    System.out.println("\n--- Catálogo ---");
-    System.out.println(melodias.mostrarTodasMelodias());
-    System.out.println("Géneros: " + melodias.obtenerGeneros());
-
-    System.out.println("Anio: " + melodias.obtenerPorAnio(2022));
-    System.out.println("Compositor: " + melodias.melodiasPorCompositor("Alfredo olivas"));
-CatalogoMelodias modelo=new CatalogoMelodias();
-CatalogoView vista=new CatalogoView();
-    ControlCatalogo control=new ControlCatalogo(vista,modelo);
+    ControlCatalogo control = new ControlCatalogo(vista, modelo);
     control.iniciar();
-
   }
 }
-
 
 
